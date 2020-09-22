@@ -28,7 +28,7 @@
        <c:choose>
        <c:when test="${empty sessionScope.loginUser}">
        <li>         
-         <a href="NonageServlet?command=login_form" style="width:110px;">LOGIN(CUSTOMER</a>   
+         <a href="Login.do" style="width:110px;">LOGIN(CUSTOMER</a>   
 	     <a href="NonageServlet?command=admin_login_form" style="width:100px;">| ADMIN)</a>
 	   </li>		       
        <li>/</li>

@@ -39,7 +39,7 @@
 	        	<input type="text" name="addr1" size="40">
 	        	<input type="text" name="addr2" size="20"> <br>
 	        <label>Phone Number</label> 
-	        	<input  type="text" name="phone"><br>
+	        	<input type="text" name="phone"><br>
 	      </fieldset>
 	      <div class="clear"></div>
 	      <div id="buttons">

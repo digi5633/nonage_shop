@@ -1,9 +1,6 @@
 package nonage_shop.dao;
 
-import static org.junit.Assert.fail;
-
 import java.sql.Connection;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.After;
@@ -65,7 +62,7 @@ public class MemberDaoTest {
 	@Test
 	public void test02UpdateMember() {
 		System.out.printf("%s()%n", "test02UpdateMember");
-		Member updateMember = new Member("three", "4444", "이자바", "ccc@dddd.com","555-555","제주도", "010-7777-7777");
+		Member updateMember = new Member("three", "4444", "이자바", "ccc@dddd.com", "555-555", "제주도", "010-7777-7777");
 		int res = MemberDaoImpl.getInstance().updateMember(updateMember);
 		Assert.assertEquals(1, res);
 

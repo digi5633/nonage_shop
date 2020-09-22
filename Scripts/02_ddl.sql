@@ -120,8 +120,8 @@ CREATE TABLE address (
 	sido VARCHAR2(30), /* 시도 */
 	gugun VARCHAR2(30), /* 구군 */
 	dong VARCHAR2(100), /* 동 */
-	zip_code VARCHAR2(30), /* 우편코드 */
-	bunji VARCHAR2(30) /* 번지 */
+	bunji VARCHAR2(30), /* 번지 */
+	zip_code VARCHAR2(30) /* 우편코드 */
 );
 
 /* 관리자 */
