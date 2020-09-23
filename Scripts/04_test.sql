@@ -25,3 +25,7 @@ SELECT ZIP_NUM, SIDO, GUGUN, DONG, BUNJI, ZIP_CODE FROM ADDRESS;
 SELECT * FROM ADDRESS WHERE DONG LIKE '%'||'아파트'||'%';
   
 DELETE FROM address WHERE SIDO = '서울';
+
+------------------------------------
+SELECT *
+  FROM CART;

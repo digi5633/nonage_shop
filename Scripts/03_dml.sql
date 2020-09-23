@@ -18,3 +18,6 @@ INSERT ALL
 	INTO MEMBER(ID, PWD, NAME, ZIP_NUM, ADDRESS, PHONE) VALUES ('one', '1111', '김나리', '133-110', '서울시성동구성수동1가 1번지21호', '017-777-7777')
 	INTO MEMBER(ID, PWD, NAME, ZIP_NUM, ADDRESS, PHONE) VALUES ('two', '2222', '이백합', '130-120', '서울시송파구잠실2동 리센츠 아파트 201동 505호', '011-123-4567')
 SELECT 1 FROM DUAL;
+
+/**/
+INSERT INTO CART(id, pseq, quantity) VALUES('one', 1, 1);

@@ -7,6 +7,30 @@
 		<meta charset="UTF-8">
 		<title>아이디 중복 체크</title>
 		<link href="css/subpage.css" rel="stylesheet">
+		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+		$(function() {
+			$('#chkid').on("click", function() {
+				 if (confirm("중복 체크 하시겠습니까?") == true) {	// 확인
+					 open_win("IdCheck.do?id=");
+			    } else {	// 취소
+			    	return;
+			    }
+				 
+			});
+			
+			$('#idok').on("click", function() {
+				opener.formm.id.value="${id}"
+				opener.formm.reid.value="${id}"
+				self.close();
+			});
+			
+		});
+		
+		function open_win(url, name) {
+			window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=500, height=230");
+		} 
+		</script>-->
 		<style type="text/css">
 			body {
 				background-color: #B96DB5;
@@ -29,9 +53,9 @@
 			}
 		</style>
 		<script type="text/javascript">
-			function idok(){
-				opener.formm.id.value = "${id}";
-				opener.formm.reid.value = "${id}";
+			function idok() {
+				opener.formm.id.value="${id}";
+				opener.formm.reid.value="${id}";
 				self.close();
 			}
 		</script>
@@ -41,8 +65,8 @@
 		<div id="wrap">
 		<h1>ID 중복확인</h1>
 		<form action="IdCheck.do" method="post" name="formm" style="margin-right: 0">
-			User ID <input type="text" name="id" value="">
-					<input type="submit" value="검색" class="submit" onclick="idcheck()"><br>
+			User ID <input id="id" type="text" name="id" value="">
+					<input id="chkid" type="submit" value="검색" class="submit"><br>
 		<div style="margin-top: 20px">
 			<c:if test="${message == 1}">
 				<script type="text/javascript">

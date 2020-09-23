@@ -7,7 +7,26 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>약관 동의</title>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script type="text/javascript">
+		$(function() {
+			$('#submit').on("click", function() {
+				if ($("input[type=radio][name='okon1']").eq(0).is(":checked") == true) {
+					if (confirm("정말 동의 하시겠습니까?") == true) {	// 확인
+						location.href="MemberJoin.do";
+				    } else {	// 취소
+				    	return;
+				    }
+				} else if ($("input[type=radio][name='okon1']").eq(1).is(":checked") == true) {
+					alert('약관에 동의하셔야만 합니다.');
+				}
+				
+			});
+			
+		});
+		
+		</script>
 	</head>
 	
 	<body>
@@ -193,10 +212,10 @@
 	      </textarea>
 	      <br><br>
 	      <div style="text-align: center;">
-			<input type="radio" name="okon1" checked> 동의함 &nbsp; &nbsp; &nbsp;
-			<input type="radio" name="okon1" checked> 동의안함
+			<input id="okon1" type="radio" name="okon1" checked> 동의함 &nbsp; &nbsp; &nbsp;
+			<input id="okon1" type="radio" name="okon1" checked> 동의안함
 	      </div>
-			<input type="button" value="Next" class="submit" onclick="go_next()" style="float: right;"> 
+			<input id="submit" type="button" value="Next" class="submit" style="float: right;"> 
 	    </form>
 	  </article>
 	</body>

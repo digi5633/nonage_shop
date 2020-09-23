@@ -38,7 +38,7 @@
        <li style="color:orange">
          ${sessionScope.loginUser.name}(${sessionScope.loginUser.id})
        </li>
-       <li><a href="NonageServlet?command=logout">LOGOUT</a></li>
+       <li><a href="Logout.do">LOGOUT</a></li>
        </c:otherwise>       
        </c:choose>
        <li>/</li>
