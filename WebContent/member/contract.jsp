@@ -19,7 +19,7 @@
 				    	return;
 				    }
 				} else if ($("input[type=radio][name='okon1']").eq(1).is(":checked") == true) {
-					alert('약관에 동의하셔야만 합니다.');
+					alert('약관에 동의하셔야 가입이 가능 합니다.');
 				}
 				
 			});
