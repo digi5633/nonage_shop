@@ -32,12 +32,12 @@
 				<tr>      
 					<td>
 						<a href="ProductDetail.do?pseq=${getCart.pseq}">
-							<h3> ${getCart.pname} </h3>              
+							<h3> ${getCart.pname} </h3>
 						</a>    
 					</td>
 					<td>${getCart.quantity}</td>
 					<td>
-						<fmt:formatNumber value="${getCart.price2*cartVO.quantity}" type="currency"/> 
+						<fmt:formatNumber value="${getCart.price2*getCart.quantity}" type="currency"/> 
 					</td>
 					<td> <fmt:formatDate value="${getCart.indate}" type="date"/></td>      
 					<td> <input type="checkbox" name="cseq" value= "${getCart.cseq}"> 

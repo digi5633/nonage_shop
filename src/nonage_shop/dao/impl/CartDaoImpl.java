@@ -29,7 +29,7 @@ public class CartDaoImpl implements CartDao {
 
 	@Override
 	public ArrayList<Cart> selectCartByAll() {
-		String sql = "SELECT CSEQ, ID, PSEQ, QUANTITY, RESULT, INDATE FROM CART";
+		String sql = "SELECT * FROM CART_VIEW";
 		try (PreparedStatement pstmt = con.prepareStatement(sql); ResultSet rs = pstmt.executeQuery()) {
 			if (rs.next()) {
 				ArrayList<Cart> list = new ArrayList<Cart>();
@@ -49,9 +49,12 @@ public class CartDaoImpl implements CartDao {
 		int cseq = rs.getInt("cseq");
 		String id = rs.getString("id");
 		int pseq = rs.getInt("pseq");
+		String mname = rs.getString("mname");
+		String pname = rs.getString("pname");
 		int quantity = rs.getInt("quantity");
-		Timestamp indate = rs.getTimestamp("INDATE");
-		return new Cart(cseq, id, pseq, quantity, indate);
+		int price2 = rs.getInt("price2");
+		Timestamp indate = rs.getTimestamp("indate");
+		return new Cart(cseq, id, pseq, mname, pname, quantity, price2, indate);
 	}
 
 	@Override
@@ -82,7 +85,7 @@ public class CartDaoImpl implements CartDao {
 
 	@Override
 	public ArrayList<Cart> getCart(Cart cart) {
-		String sql = "SELECT CSEQ, ID, PSEQ, QUANTITY, RESULT, INDATE FROM CART WHERE ID = ? ORDER BY CSEQ DESC";
+		String sql = "SELECT * FROM CART_VIEW WHERE ID = ? ORDER BY CSEQ DESC";
 		try (PreparedStatement pstmt = con.prepareStatement(sql);) {
 			pstmt.setString(1, cart.getId());
 			try (ResultSet rs = pstmt.executeQuery()) {
