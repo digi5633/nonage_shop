@@ -7,12 +7,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>데이터베이스 연결 테스트</title>
+		<link href="css/shopping.css" rel="stylesheet">  
 	</head>
 	
 	<body>
 		<c:set var="con" value="${JndiDS.getConnection()}"/>
 		<c:out value="${con}"/>
 		<br><br>
-		<a href="ProductList.do">Nonage Shop으로 이동</a>
+		<div id="logo" style="font-size: 18px;">
+	      <a href="ProductList.do" style="">
+	        <img src="images/logo.gif" width="600" height="400" alt="nonageshop"><br>
+	      	Nonage Shop으로 이동
+	      </a>
+    	</div>
 	</body>
 </html>
