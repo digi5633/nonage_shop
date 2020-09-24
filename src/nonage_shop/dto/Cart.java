@@ -28,8 +28,26 @@ public class Cart {
 		this.indate = indate;
 	}
 
+	public Cart(int cseq, String id, int pseq, int quantity, Timestamp indate) {
+		this.cseq = cseq;
+		this.id = id;
+		this.pseq = pseq;
+		this.quantity = quantity;
+		this.indate = indate;
+	}
+
+	public Cart(String id, int pseq, int quantity) {
+		this.id = id;
+		this.pseq = pseq;
+		this.quantity = quantity;
+	}
+
 	public Cart(int cseq) {
 		this.cseq = cseq;
+	}
+
+	public Cart(String id) {
+		this.id = id;
 	}
 
 	public int getCseq() {

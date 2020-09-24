@@ -43,7 +43,7 @@
        </c:choose>
        <li>/</li>
        <li>
-         <a href="NonageServlet?command=cart_list">CART</a>
+         <a href="CartList.do">CART</a>
        </li><li>/</li>
        <li>
          <a href="NonageServlet?command=mypage">MY PAGE</a>

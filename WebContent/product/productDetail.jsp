@@ -3,6 +3,7 @@
 <%@ include file="../header.jsp" %>
 <%@ include file="sub_img.html"%>
 <%@ include file="sub_menu.html" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -40,4 +41,5 @@
 	</article>
 	</body>
 </html>
+
 <%@ include file="../footer.jsp" %>

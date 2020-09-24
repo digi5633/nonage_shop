@@ -19,5 +19,5 @@ INSERT ALL
 	INTO MEMBER(ID, PWD, NAME, ZIP_NUM, ADDRESS, PHONE) VALUES ('two', '2222', '이백합', '130-120', '서울시송파구잠실2동 리센츠 아파트 201동 505호', '011-123-4567')
 SELECT 1 FROM DUAL;
 
-/**/
-INSERT INTO CART(id, pseq, quantity) VALUES('one', 1, 1);
+/* Cart 카트 */
+INSERT INTO CART(ID, PSEQ, QUANTITY) VALUES('one', 1, 1);

@@ -31,4 +31,8 @@ public class CartService {
 		return dao.deleteCart(cart);
 	}
 
+	public ArrayList<Cart> getCart(Cart cart) {
+		return dao.getCart(cart);
+	}
+
 }

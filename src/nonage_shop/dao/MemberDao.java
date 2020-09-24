@@ -18,7 +18,7 @@ public interface MemberDao {
 	// 회원 수정
 	int updateMember(Member member);
 	
-	//회원 삭제
+	// 회원 삭제
 	int deleteMember(Member member);
 	
 	//
