@@ -84,10 +84,10 @@ public class CartDaoImpl implements CartDao {
 	}
 
 	@Override
-	public ArrayList<Cart> getCart(Cart cart) {
+	public ArrayList<Cart> getCart(String id) {
 		String sql = "SELECT * FROM CART_VIEW WHERE ID = ? ORDER BY CSEQ DESC";
 		try (PreparedStatement pstmt = con.prepareStatement(sql);) {
-			pstmt.setString(1, cart.getId());
+			pstmt.setString(1, id);
 			try (ResultSet rs = pstmt.executeQuery()) {
 				if (rs.next()) {
 					ArrayList<Cart> list = new ArrayList<Cart>();

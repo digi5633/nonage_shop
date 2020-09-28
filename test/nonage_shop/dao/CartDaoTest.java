@@ -64,7 +64,7 @@ public class CartDaoTest {
 	@Test
 	public void test04GetCart() {
 		System.out.printf("%s()%n", "test04GetCart");
-		ArrayList<Cart> list = dao.getCart(new Cart("two"));
+		ArrayList<Cart> list = dao.getCart("two");
 		Assert.assertNotNull(list);
 		list.stream().forEach(System.out::println);
 	}

@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import nonage_shop.controller.Command;
-import nonage_shop.dto.Cart;
 import nonage_shop.dto.Member;
-import nonage_shop.service.CartService;
+import nonage_shop.dto.Order;
+import nonage_shop.service.OrderService;
 
-public class CartListModel implements Command {
+public class OrderListModel implements Command {
 
-	private CartService service = new CartService();
+	private OrderService service = new OrderService();
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response)
@@ -24,26 +24,28 @@ public class CartListModel implements Command {
 		if (request.getMethod().equalsIgnoreCase("GET")) {
 			System.out.println("GET");
 
-			String url = "mypage/cartList.jsp";
+			String url = "mypage/orderList.jsp";
 
 			HttpSession session = request.getSession();
 
 			Member loginUser = (Member) session.getAttribute("loginUser");
 			System.out.println("loginUser > " + loginUser);
-			
+
 			if (loginUser == null) {
 				url = "member/login.jsp";
 			} else {
-				ArrayList<Cart> getCart = service.getCart(loginUser.getId());
-				int totalPrice = 0;
+				int oseq = Integer.parseInt(request.getParameter("oseq"));
 
-				for (Cart cart : getCart) {
-					totalPrice += cart.getPrice2() * cart.getQuantity();
+				ArrayList<Order> orderList = service.listOrderById(loginUser.getId(), "1", oseq);
+
+				int totalPrice = 0;
+				for (Order order : orderList) {
+					totalPrice += order.getPrice2() * order.getQuantity();
 				}
-				request.setAttribute("getCart", getCart);
+				request.setAttribute("orderList", orderList);
 				request.setAttribute("totalPrice", totalPrice);
 			}
-			return url;
+			return "mypage/orderList.jsp";
 
 		} else {
 			System.out.println("POST");

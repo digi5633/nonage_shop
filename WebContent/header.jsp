@@ -29,7 +29,7 @@
        <c:when test="${empty sessionScope.loginUser}">
        <li>         
          <a href="Login.do" style="width:110px;">LOGIN(CUSTOMER</a>   
-	     <a href="NonageServlet?command=admin_login_form" style="width:100px;">| ADMIN)</a>
+	     <a href="AdminLogin.do" style="width:100px;">| ADMIN)</a>
 	   </li>		       
        <li>/</li>
        <li><a href="MemberContract.do">JOIN</a></li>
@@ -46,10 +46,10 @@
          <a href="CartList.do">CART</a>
        </li><li>/</li>
        <li>
-         <a href="NonageServlet?command=mypage">MY PAGE</a>
+         <a href="MyPage.do">MY PAGE</a>
        </li><li>/</li>
        <li>
-         <a href="NonageServlet?command=qna_list">Q&amp;A(1:1)</a>
+         <a href="QnaList.do">Q&amp;A(1:1)</a>
        </li>
      </ul>
     </nav>

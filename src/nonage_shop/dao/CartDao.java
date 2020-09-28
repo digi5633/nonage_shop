@@ -10,7 +10,7 @@ public interface CartDao {
 	ArrayList<Cart> selectCartByAll();
 	
 	// 카트 가져오기
-	ArrayList<Cart> getCart(Cart cart);
+	ArrayList<Cart> getCart(String id);
 	
 	// 카트 추가
 	int insertCart(Cart cart);

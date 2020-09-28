@@ -12,10 +12,12 @@ import nonage_shop.controller.Command;
 import nonage_shop.dto.Cart;
 import nonage_shop.dto.Member;
 import nonage_shop.service.CartService;
+import nonage_shop.service.OrderService;
 
-public class CartListModel implements Command {
+public class OrderInsertModel implements Command {
 
-	private CartService service = new CartService();
+	private OrderService orderService = new OrderService();
+	private CartService cartService = new CartService();
 
 	@Override
 	public String process(HttpServletRequest request, HttpServletResponse response)
@@ -24,32 +26,35 @@ public class CartListModel implements Command {
 		if (request.getMethod().equalsIgnoreCase("GET")) {
 			System.out.println("GET");
 
-			String url = "mypage/cartList.jsp";
+			return "mypage/orderList.jsp";
+
+		} else {
+			System.out.println("POST");
+
+			String url = "OrderList.do";
 
 			HttpSession session = request.getSession();
 
 			Member loginUser = (Member) session.getAttribute("loginUser");
 			System.out.println("loginUser > " + loginUser);
-			
+
 			if (loginUser == null) {
 				url = "member/login.jsp";
 			} else {
-				ArrayList<Cart> getCart = service.getCart(loginUser.getId());
-				int totalPrice = 0;
+				ArrayList<Cart> cartList = cartService.getCart(loginUser.getId());
+				System.out.println("cartList > " + cartList);
 
-				for (Cart cart : getCart) {
-					totalPrice += cart.getPrice2() * cart.getQuantity();
-				}
-				request.setAttribute("getCart", getCart);
-				request.setAttribute("totalPrice", totalPrice);
+				int maxOseq = orderService.insertOrder(cartList, loginUser.getId());
+				System.out.println("maxOseq > " + maxOseq);
+				
+				url = "OrderList.do?oseq="+maxOseq;
+
+				response.sendRedirect(url);
+
 			}
-			return url;
 
-		} else {
-			System.out.println("POST");
-
-			return null;
 		}
+		return null;
 
 	}
 
