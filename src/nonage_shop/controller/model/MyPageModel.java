@@ -63,7 +63,7 @@ public class MyPageModel implements Command {
 		} else {
 			System.out.println("POST");
 
-			return null;
+			return "mypage/mypage.jsp";
 		}
 
 	}

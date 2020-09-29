@@ -62,6 +62,6 @@ function go_order_delete() {
 }
 
 function go_order() {
-	document.formm.action = "Mypage.do";
+	document.formm.action = "MyPage.do";
 	document.formm.submit();
 }
